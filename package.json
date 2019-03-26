@@ -1,0 +1,20 @@
+{
+  "name": "weatherapp-demo",
+  "version": "1.0.0",
+  "description": "weather data from  openload api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "joi": "^14.3.1",
+    "mongoose": "^5.4.19",
+    "pug": "^2.0.3",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
+  }
+}

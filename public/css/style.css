@@ -1,0 +1,18 @@
+.tempbox {
+  text-transform: capitalize;
+  border: 1px solid #555;
+  width: 250px;
+  text-align: center;
+  display: inline-block;
+}
+
+body {
+  background: black;
+  color: white;
+  text-align: center;
+}
+
+.centerdiv {
+  text-align: center;
+  align-items: center;
+}
