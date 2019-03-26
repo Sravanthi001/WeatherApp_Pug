@@ -22,10 +22,11 @@ html
              strong temp: 
              em= item.temp
              em ° F
-             br
-             em= item.desc
-             - var img = "http://openweathermap.org/img/w/"+item.icon+".png"
-             img(src=img)
+                br
+                
+                .icon= item.desc
+                    - var img = "http://openweathermap.org/img/w/"+item.icon+".png"
+                    img.top(src=img)
              
         else
             strong no cities added yet!

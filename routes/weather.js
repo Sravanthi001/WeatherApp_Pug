@@ -31,7 +31,7 @@ router.post("/", async (req, res) => {
     });
 
   let city = await City.findOne({ name: req.body.name.toLowerCase() });
-  // if (city) return res.status(400).send("city is already listed");
+
   if (city) {
     return res.status(400).render("index", {
       message: weather_jdata,
