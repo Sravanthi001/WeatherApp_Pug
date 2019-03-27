@@ -6,7 +6,7 @@ $(document).ready(function() {
       type: "DELETE",
       url: "weather" + "/" + id,
       success: function(response) {
-        alert("deleting city");
+        alert("Deleting selected City");
         window.location.href = "weather";
       },
       error: function(err) {

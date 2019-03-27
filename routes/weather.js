@@ -14,13 +14,13 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
   let weather_jdata = [];
   weather_jdata = await gettemp();
-  console.log("inside post", req.body);
+
   const { error } = validate(req.body);
   //if (error) return res.status(400).send(error.details[0].message);
   if (error)
     return res.status(400).render("index", {
       message: weather_jdata,
-      error: error.details[0].message
+      error: "Please enter Valid City. No empty string or numbers " //error.details[0].message
     });
 
   let city = await City.findOne({ name: req.body.name.toLowerCase() });

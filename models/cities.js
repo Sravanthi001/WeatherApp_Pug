@@ -17,6 +17,7 @@ const City = mongoose.model("City", citySchema);
 function validateCity(city) {
   const schema = {
     name: Joi.string()
+      .regex(/^[a-zA-Z]/)
       .min(3)
       .required()
   };
