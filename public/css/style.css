@@ -7,7 +7,8 @@
   text-align: center;
   display: inline-block;
   margin: 1rem;
-  background: rgb(56, 56, 56);
+  background: rgb(29, 12, 48);
+  /* rgb(56, 56, 56); */
   padding: 4px;
 }
 
@@ -15,6 +16,9 @@
   border-radius: 25px;
   background: rgb(1, 1, 41);
   border: 1.5px solid rgb(153, 153, 153);
+}
+.tempbox:hover .delete {
+  color: red;
 }
 
 body {
@@ -39,5 +43,9 @@ img.top {
 
 .close {
   text-align: right !important;
-  color: red;
+}
+
+.delete {
+  color: rgb(153, 153, 153);
+  margin: 4px;
 }
