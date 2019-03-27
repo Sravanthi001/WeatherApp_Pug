@@ -49,3 +49,11 @@ img.top {
   color: rgb(153, 153, 153);
   margin: 4px;
 }
+
+.footer {
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  left: 0;
+  bottom: 0;
+}

@@ -45,7 +45,7 @@ router.post("/", async (req, res) => {
   }
 
   //res.send(city);
-  res.redirect("/api/weather");
+  res.redirect("weather");
 });
 
 async function gettemp() {
