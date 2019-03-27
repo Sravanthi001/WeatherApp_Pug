@@ -6,22 +6,15 @@ const router = express.Router();
 //if (message)
 router.get("/", async (req, res) => {
   let weather_jdata = [];
-
+  console.log("inside get");
   weather_jdata = await gettemp();
-  // res.send(weather_jdata);
-  //   if (!weather_jdata.length) {
-  //     res.render("index", {
-  //       message: weather_jdata,
-  //       error: "no Cities added, please add if you want to know the weather!"
-  //     });
-  //   } else
   res.render("index", { message: weather_jdata });
 });
 
 router.post("/", async (req, res) => {
   let weather_jdata = [];
   weather_jdata = await gettemp();
-
+  console.log("inside post", req.body);
   const { error } = validate(req.body);
   //if (error) return res.status(400).send(error.details[0].message);
   if (error)
@@ -75,7 +68,8 @@ async function gettemp() {
         city: city,
         temp: data_json.main.temp,
         desc: data_json.weather[0].description,
-        icon: data_json.weather[0].icon
+        icon: data_json.weather[0].icon,
+        id: c._id
       };
 
       weather_data.push(weather);
@@ -90,13 +84,15 @@ async function gettemp() {
   return weather_data;
 }
 
-// router.delete("/:id", [auth, admin], async (req, res) => {
-//   const genre = await Genre.findByIdAndRemove(req.params.id);
+router.delete("/:id", async (req, res) => {
+  console.log("inside delete", req.params.id);
+  let query = { _id: req.params.id };
+  const city = await City.findByIdAndRemove(req.params.id);
 
-//   if (!genre)
-//     return res.status(404).send("The genre with the given ID was not found.");
+  //   if (!genre)
+  //     return res.status(404).send("The genre with the given ID was not found.");
 
-//   res.send(genre);
-// });
+  res.send("success");
+});
 
 module.exports = router;

@@ -8,7 +8,7 @@ html
  body
     h1= "Weather Data"
     form(method="POST")
-     p Enter City
+     p Enter City Name
      input(type="text", name="name")
      p
      input(type="submit")
@@ -18,6 +18,8 @@ html
         for item in message
             p
             .tempbox
+             .close
+              a.delete(href="#",linkid=item.id ) X
              p= item.city
              strong temp: 
              em= item.temp
@@ -30,5 +32,8 @@ html
              
         else
             strong no cities added yet!
-    
+ footer
+    p Copyright &copy; 2019   
+script(src="https://code.jquery.com/jquery-1.9.1.min.js")
+script(src='/js/main.js') 
     

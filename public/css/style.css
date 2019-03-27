@@ -36,3 +36,8 @@ body {
 img.top {
   vertical-align: middle;
 }
+
+.close {
+  text-align: right !important;
+  color: red;
+}
